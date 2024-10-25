@@ -1,0 +1,12 @@
+[PREGUNTA]: Why do cats purr?
+[RESPUESTA]: Cats purr as a way to communicate and express various emotions. While often associated with contentment, purring can also happen when cats are anxious, scared, or even in pain, as it might help them calm down and promote healing.
+---
+[PREGUNTA]: Why are flamingos pink?
+[RESPUESTA]: Flamingos are pink because of pigments they absorb from their diet, mainly a type of carotenoid found in shrimp and other small aquatic creatures they eat.
+---
+[PREGUNTA]: What is the weather today?
+[RESPUESTA]: The weather is sunny today.
+---
+[PREGUNTA]: Test question
+[RESPUESTA]: Test answer
+---
