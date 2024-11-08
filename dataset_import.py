@@ -1,56 +1,54 @@
 import os
-from google.cloud import storage
-from google.cloud import aiplatform
 from dotenv import load_dotenv
+from google.api_core.client_options import ClientOptions
+from google.cloud import discoveryengine
 
-# Cargar variables de entorno desde el archivo .env
 load_dotenv()
 
-# Configuración del bucket y archivo en Google Cloud Storage
-bucket_name = os.getenv("GCS_BUCKET_NAME")
-blob_name = "CONTEXTS/CONTEXTS.txt"  # El nombre del archivo en GCS
+project_id = os.getenv("GCP_PROJECT_ID")
+location = "global"
+data_store_id = os.getenv("DATA_STORE_ID")
+gcs_uri = os.getenv("GCS_URI")
 
-# Inicializar el cliente de Google Cloud Storage
-storage_client = storage.Client()
-
-# Obtener el bucket y el archivo (blob) en Google Cloud Storage
-bucket = storage_client.bucket(bucket_name)
-blob = bucket.blob(blob_name)
-
-# Verificar si el archivo existe en el bucket
-if blob.exists():
-    print(f"El archivo {blob_name} existe en el bucket {bucket_name}.")
-else:
-    print(f"El archivo {blob_name} no se encuentra en el bucket {bucket_name}.")
-    exit(1)  # Salir si el archivo no existe
-
-# Inicializar Vertex AI
-aiplatform.init(project="mychef-chatbot", location="us-central1")  # Verifica que la ubicación sea correcta
-
-# URI del archivo en Google Cloud Storage
-gcs_file_uri = f"gs://{bucket_name}/{blob_name}"
-
-# Crear un Dataset de Texto en Vertex AI
-dataset_service_client = aiplatform.gapic.DatasetServiceClient()
-
-# Crear el dataset (en este caso, un Dataset de texto)
-dataset_create_request = aiplatform.gapic.CreateDatasetRequest(
-    parent=f"projects/{os.getenv('PROJECT_ID')}/locations/us-central1",
-    dataset=aiplatform.gapic.Dataset(
-        display_name="Text Dataset from CONTEXTS.txt",
-        metadata={
-            "input_data_config": {
-                "gcs_source": {
-                    "input_uris": [gcs_file_uri]  # URI del archivo en GCS
-                }
-            }
-        },
-    ),
+#  For more information, refer to:
+# https://cloud.google.com/generative-ai-app-builder/docs/locations#specify_a_multi-region_for_your_data_store
+client_options = (
+    ClientOptions(api_endpoint=f"{location}-discoveryengine.googleapis.com")
+    if location != "global"
+    else None
 )
 
-# Crear el dataset en Vertex AI
-try:
-    response = dataset_service_client.create_dataset(dataset_create_request)
-    print(f"Dataset creado exitosamente: {response.name}")
-except Exception as e:
-    print(f"Ocurrió un error al crear el dataset: {e}")
+# Create a client
+client = discoveryengine.DocumentServiceClient(client_options=client_options)
+
+# The full resource name of the search engine branch.
+parent = client.branch_path(
+    project=project_id,
+    location=location,
+    data_store=data_store_id,
+    branch="default_branch",
+)
+
+request = discoveryengine.ImportDocumentsRequest(
+    parent=parent,
+    gcs_source=discoveryengine.GcsSource(
+        input_uris=[gcs_uri],
+        data_schema="content",
+    ),
+    reconciliation_mode=discoveryengine.ImportDocumentsRequest.ReconciliationMode.INCREMENTAL,
+)
+
+# Make the request
+print(request)
+operation = client.import_documents(request=request)
+
+print(f"Waiting for operation to complete: {operation.operation.name}")
+response = operation.result()
+
+# After the operation is complete,
+# get information from operation metadata
+metadata = discoveryengine.ImportDocumentsMetadata(operation.metadata)
+
+# Handle the response
+print(response)
+print(metadata)
