@@ -1,9 +1,8 @@
 import os
 import requests
 from dotenv import load_dotenv
-from google.cloud import storage  # Importa la biblioteca de Google Cloud Storage
+from google.cloud import storage
 
-# Load environment
 load_dotenv()
 token = os.getenv("BEARER_TOKEN")
 bucket_name = os.getenv("GCS_BUCKET_NAME")
