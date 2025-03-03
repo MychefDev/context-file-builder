@@ -1,0 +1,143 @@
+[PREGUNTA]: qué temperatura aguantan vuestros tubos de primera instalación?
+[RESPUESTA]: Nuestros tubos de primera instalación están diseñados para soportar temperaturas de hasta 90°C en cargas continuas de aguas residuales. En caso de exposiciones puntuales, pueden soportar hasta 110°C a corto plazo.
+---
+[PREGUNTA]: Hola, tengo una duda de como descargar la recetas del control de un horno Mychef Concept? Se hace con un USB?
+[RESPUESTA]: Carga los programas de una memoria FLASH conectada en el puerto USB y los graba en la memoria de los programas 1 a 99 del horno. Para hacerlo, con una memoria FLASH conectada al puerto USB, presionar unos segundos el botón START/STOP. 
+
+En cambio para hacer una copia de seguridad en una unidad USB, graba los programas 1 a 99 del horno en una memoria tipo FLASH conectada en el puerto USB. Para hacerlo, con una memoria FLASH conectada al puerto USB, presionar unos segundos el botón START/STOP. 
+---
+[PREGUNTA]: En un horno Compact Evolution, está permenete en bucle haciendo lavados y aclarados, no pudiendo salir de ahí, apareciendo de forma constante error 26. Puede ser un problema de firmware? Valdría la pena restaurar? O borrar la memoria Flash?
+[RESPUESTA]: Indique al cliente que, una vez finalizado el proceso de lavado, confirme en el panel que este ha terminado correctamente pulsando START/STOP. Si el problema persiste, se debería restaurar el panel de control a la última versión mediante USB. Para ello, deberá contactar con soporte a través de soporte@mychefpro.com o support@mychefpro.com.
+---
+[PREGUNTA]: En un horno eléctrico Mychef, qué componentes propios del horno pueden reproducir un error 6 aparte del propio motor?
+[RESPUESTA]: Los componentes que pueden causar un error 6, además del propio motor, son los siguientes:
+
+- Configuración incorrecta del panel de control.
+- Mala conexión del cable de comunicaciones entre ambas placas electrónicas.
+- Corte o erosión en el cable de comunicaciones entre ambas placas electrónicas.
+- Estado de carga del condensador.
+- Condición de los rodamientos del propio motor.
+- Falta de refrigeración por los ventiladores axiales.
+- Fallo en la lectura del térmico del motor por parte de la placa de relés, o del variador si el sistema lo lleva.
+
+Es importante asegurarse de que el horno esté instalado conforme a las fichas técnicas y manuales de producto.
+
+Ruego revisen la instrucción creada para la resolución del error 6 y actúen en consecuencia.
+---
+[PREGUNTA]: tengo un horno Mychef Bakershop AIR-S, que tiene error 4.1 al mismo tiempo que marca puerta abierta cuando está cerrada. El micro de la puerta da buena señal de continuidad cuando está cerrada. La tensión de salida de la fuente es correcta a 12V DC.
+[RESPUESTA]: Viendo dos fallos simultaneos, todo apunta al componente común, la placa de relés, al no detectar nada en elementos contíguos, como son la fuente de alimentación, cable de comunicaciones y panel de control.
+---
+[PREGUNTA]: El horno no cocina con homogeneidad
+[RESPUESTA]: Comprobar temperatura: Verifique que la temperatura dentro del horno coincide con la indicada en el display manteniendo pulsado el botón de temperatura. Si no coincide, podría haber un problema con la sonda o el sistema de regulación.
+
+Condiciones previas: Pregunte si ocurre tras usar el horno a altas temperaturas. Si es así, deje enfriar el horno antes de trabajar a temperaturas bajas.
+
+Revisar fugas: Inspeccione posibles fugas de calor verificando:
+La junta de la puerta y el ajuste de las bisagras.
+Que el sifón contiene agua y el desagüe está correctamente montado.
+
+Consultar el manual: Asegúrese de seguir las indicaciones de instalación y mantenimiento del manual.
+---
+[PREGUNTA]: Hola, en un panel de control de un horno Mychef Cook Master, el cambia en el display de forma súbita la temperatura, a qué puede deberse?
+[RESPUESTA]: En lugar de sensor, también como sinónimo sugiría sonda.
+---
+[PREGUNTA]: Tengo un error 24 en un horno Mychef Evolution
+[RESPUESTA]: Sonda cámara cortocircuitada. Verifique la sonda y cableado.
+
+Hola,
+
+Error 23 corresponde con un fallo con la sonda de la cámara.
+
+Debe revisar:
+
+- Que la sonda no haya recibido un golpe,
+
+- Firmeza del conector al cable,
+
+- Que su resistividad esté alrededor de los 100ohms aproximadamente a temperatura ambiente,
+
+- Continuidad eléctrica entre los polos del conector,
+
+- Ambos conectores libres de suciedad,
+
+- Estado del conector hembra en la placa electrónica.
+
+Si necesita otra aclaración adicional, no dude en contactar con nosotros.
+
+Muchas gracias,
+
+Saludos
+
+Equipo Mychef
+
+
+---
+[PREGUNTA]: Tengo un horno Mychef iCook Compact, el cual no se enciende, qué puntos debería chequear?
+[RESPUESTA]: Below are the steps you should follow to perform the necessary checks to be sure there is screen default:
+
+1.	Check the electrical connection:
+   o	Measure the voltage between the phases; it should be between 380V and 400V.
+   o	Measure the voltage between each phase and neutral; it should be 230V.
+   o	Ensure that the earth connection is correct.
+
+2.	Check the safety thermostat:
+   o	The thermostat should be normally closed.
+   o	If it is open, try resetting it manually (if possible).
+
+3.	Check the voltage on the first contactor (entry terminal block):
+  o	Ensure the contactor is receiving 380V to 400V.
+  o	If the voltage is incorrect, check the wiring or the upstream components.
+
+4.	Check the transformer:
+  o	Verify that the transformer is receiving 230V AC.
+  o	Ensure that the transformer outputs 12V.
+
+5.	Check the 12V voltage at own control panel:
+  o	Verify that a 12V DC voltage is arriving at the panel between the yellow and white wires.
+---
+[PREGUNTA]: Error 4.1
+[RESPUESTA]: El error 4.1 en los hornos Mychef se debe a problemas de comunicación entre la placa de control y la placa de relés, generalmente por fallos en el cable Modbus. Los pasos para resolverlo son:
+Verificación del Cable Modbus: Revise el cable por cortes o desgaste y compruebe la continuidad entre los extremos de los hilos.
+Revisión de la Placa de Relés: Asegúrese de que el conector esté bien ajustado y que los LED de fuente de alimentación y comunicación parpadeen correctamente (10 veces por segundo). Si no, hay un fallo de comunicación.
+Comprobación de la Placa de Control: Verifique que el cable Modbus esté bien crimpado y que el LED D4 parpadee según lo indicado, lo que confirma una buena comunicación.
+Prueba de Relés: Realice la prueba de los relés para asegurar que la comunicación sea adecuada.
+Estos pasos ayudarán a identificar y solucionar el problema de comunicación entre las placas.
+
+---
+[PREGUNTA]: como soluciono el error 6?
+[RESPUESTA]: El error 6 en los hornos Mychef generalmente se debe a una sobretemperatura en el motor, lo cual activa el protector térmico y provoca la interrupción de la continuidad en el motor. Este error no necesariamente implica una avería permanente del motor, sino que puede deberse a condiciones operativas o a un problema en otros componentes. A continuación, se detalla cómo proceder en cada caso para identificar el origen y aplicar las soluciones pertinentes:
+
+1. Verificación de las Condiciones Térmicas de Funcionamiento
+Ventilación: Asegúrese de que los ventiladores axiales de refrigeración funcionen correctamente y estén libres de suciedad o grasa. Estos deben contar con suficiente espacio libre para aspirar aire sin obstrucciones.
+Distancias Recomendadas: Mantenga una distancia de aproximadamente 5-10 cm respecto a las paredes laterales y al menos 10 cm en la parte trasera (donde se encuentra la rejilla de ventilación).
+Separación de Fuentes de Calor: Es recomendable mantener una distancia mínima de un metro respecto a otras fuentes de calor, tales como planchas, fogones o freidoras.
+Mychef solicita evidencias fotográficas del entorno de instalación (distancias y fuentes de calor) para validar las condiciones adecuadas si se necesita una reparación en garantía.
+
+2. Comprobación del Motor
+El protector térmico del motor es el principal causante del error 6 en muchos casos. Para determinar el estado del motor, realice las siguientes comprobaciones:
+
+Error al encender el horno (motor en frío): Verifique la continuidad en el conector del motor. Si el motor presenta continuidad, está en buen estado; en caso contrario, será necesario reemplazar el motor.
+Error durante el funcionamiento: En este caso, el origen del error puede estar relacionado con:
+Condiciones térmicas de funcionamiento (vea el apartado 1).
+Fricción en el eje del motor debido a otros elementos del horno o al propio motor. Se recomienda identificar y eliminar la causa de la fricción.
+Contacto de la pala con la chapa de protección. Si observa algún daño en el conjunto, deberá reemplazarlo.
+Capacitancia del condensador: Compruebe que los µF del condensador del motor coincidan con los especificados en su etiqueta. Si existen discrepancias, se debe reemplazar el condensador.
+Después de que aparezca el error, compruebe la continuidad del motor:
+
+Si hay continuidad: Inspeccione la placa de relés y el cable de comunicación.
+Si no hay continuidad: Espere a que el horno se enfríe hasta alcanzar la temperatura ambiente. Si, tras el enfriamiento, el motor sigue sin dar continuidad, el motor está averiado y debe ser reemplazado.
+
+3. Revisión del Cable de Comunicación
+Si se sospecha que el origen del error puede estar en el cable de comunicación, se recomienda:
+
+Revisar visualmente que el cable esté intacto, sin cortes ni daños visibles.
+Comprobar la continuidad en cada uno de los hilos del cable.
+Confirmar que el cable esté bien conectado tanto en la placa de control como en la placa de relés.
+En caso de encontrar algún fallo, sustituya el cable de comunicación.
+
+4. Inspección de la Placa de Relés
+Si el error persiste después de las comprobaciones anteriores, es posible que la placa de relés esté emitiendo un falso error 6. Para confirmar este diagnóstico, se puede realizar un puente en el conector del motor y encender el horno.
+
+Si el error persiste: La placa de relés debe ser reemplazada.
+Para equipos en garantía, Mychef realizará las comprobaciones de los componentes una vez que estos sean recibidos en fábrica.
+---

@@ -39,9 +39,6 @@ try:
         print("\nContenido del archivo CONTEXTS.txt:\n")
         print(content)
 
-    os.remove(filename)
-    print(f"File {filename} deleted successfully.")
-
 except requests.exceptions.RequestException as e:
     print("Error:", e)
 except Exception as e:
